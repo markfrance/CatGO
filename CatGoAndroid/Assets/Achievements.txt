@@ -1,0 +1,5 @@
+﻿VIEWS:
+Profile
+Camera
+Photo list > view > edit
+Map

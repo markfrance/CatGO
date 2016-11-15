@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace CatGoAndroid
 {
-    [Activity(Label = "Login", MainLauncher = true, Theme = "@style/android:Theme.Holo.Light.NoActionBar")]
+    [Activity(Label = "Login", Theme = "@style/android:Theme.Holo.Light.NoActionBar")]
     public class LoginActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -25,9 +25,9 @@ namespace CatGoAndroid
 
             login.Click += (object sender, EventArgs e) =>
             {
-                var list = new Intent(this, typeof(PhotoListActivity));
-
-                StartActivity(list);
+                var geoUri = Android.Net.Uri.Parse("geo:42.374260,-71.120824");
+                var mapIntent = new Intent(Intent.ActionView, geoUri);
+                StartActivity(mapIntent);
             };
         }
     }

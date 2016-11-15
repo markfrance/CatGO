@@ -4,9 +4,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
   <ImageView
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          android:id="@+id/photoView"
-          android:src="@drawable/Icon"
-          android:scaleType="fitCenter"/>
+      android:layout_width="fill_parent"
+      android:layout_height="300.0dp"
+      android:id="@+id/photoView"
+      android:src="@drawable/Icon"
+      android:scaleType="fitCenter" />
+  <Button
+      android:id="@+id/edit_image"
+      android:layout_width="fill_parent"
+      android:layout_height="300.0dp"
+      android:text="Edit"/>
 </LinearLayout>

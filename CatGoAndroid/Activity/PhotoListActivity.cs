@@ -30,9 +30,26 @@ namespace CatGoAndroid
 
                 if (db.Table<Photo>().Count() == 0)
                 {
-                    var photo1 = new Photo { Date = DateTime.Now.ToString(), Description = "Cat", Image = "Cat.jpg", Name = "Test1" };
+                    var photo1 = new Photo
+                    {
+                        Date = DateTime.Now.ToString(),
+                        Description = "Cat",
+                        Image = "Cat.jpg",
+                        Name = "Test1",
+                        Latitude = 51.501690,
+                        Longitude = -0.1263427
+                    };
                     db.Insert(photo1);
-                    var photo2 = new Photo { Date = DateTime.Now.ToString(), Description = "Cat2", Image = "Cat2.jpg", Name = "Test2" };
+
+                    var photo2 = new Photo
+                    {
+                        Date = DateTime.Now.ToString(),
+                        Description = "Cat2",
+                        Image = "Cat2.jpg",
+                        Name = "Test2",
+                        Latitude = 51.501690,
+                        Longitude = -0.1263427
+                    };
                     db.Insert(photo2);
                 }
 

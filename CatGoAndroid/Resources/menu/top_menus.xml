@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+       android:id="@+id/menu_profile"
+       android:icon="@drawable/ic_action_content_create"
+       android:showAsAction="ifRoom"
+       android:title="Profile" />
+  <item
+       android:id="@+id/menu_camera"
+       android:icon="@drawable/ic_action_content_save"
+       android:showAsAction="ifRoom"
+       android:title="Camera" />
+  <item
+       android:id="@+id/menu_list"
+       android:icon="@drawable/ic_menu_search_holo_dark"
+       android:showAsAction="ifRoom"
+       android:title="List" />
+  <item
+     android:id="@+id/menu_map"
+     android:icon="@drawable/ic_menu_paste_holo_dark"
+     android:showAsAction="ifRoom"
+     android:title="Map" />
+</menu>
