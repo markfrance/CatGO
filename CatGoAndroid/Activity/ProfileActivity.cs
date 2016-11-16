@@ -14,7 +14,7 @@ using SQLite;
 
 namespace CatGoAndroid
 {
-    [Activity(Label = "ProfileActivity", MainLauncher = true)]
+    [Activity(Label = "ProfileActivity")]
     public class ProfileActivity : Activity
     {
 

@@ -3,32 +3,31 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-
-  <Button
-      android:id="@+id/myButton"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/openCamera" />
-  <ImageView
-      android:src="@android:drawable/ic_menu_gallery"
-      android:layout_width="fill_parent"
-      android:layout_height="300.0dp"
-      android:id="@+id/imageView1"
-      android:adjustViewBounds="true" />
-  <Button
-           android:id="@+id/save"
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="10dp"
-           android:background="#307FC1"
-           android:text="Save"
-           android:textColor="@android:color/white" />
-  <Button
-           android:id="@+id/delete"
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="10dp"
-           android:background="#307FC1"
-           android:text="Delete"
-           android:textColor="@android:color/white" />
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/openCamera" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="fill_parent"
+        android:layout_height="300.0dp"
+        android:id="@+id/imageView1"
+        android:adjustViewBounds="true" />
+    <Button
+        android:id="@+id/save"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#307FC1"
+        android:text="Save"
+        android:textColor="@android:color/white" />
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#307FC1"
+        android:text="Delete"
+        android:textColor="@android:color/white" />
 </LinearLayout>
