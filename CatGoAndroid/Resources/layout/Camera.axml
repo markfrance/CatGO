@@ -3,31 +3,60 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <Button
-        android:id="@+id/myButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/openCamera" />
-    <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_width="fill_parent"
-        android:layout_height="300.0dp"
-        android:id="@+id/imageView1"
-        android:adjustViewBounds="true" />
-    <Button
-        android:id="@+id/save"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#307FC1"
-        android:text="Save"
-        android:textColor="@android:color/white" />
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#307FC1"
-        android:text="Delete"
-        android:textColor="@android:color/white" />
+  <Button
+      android:id="@+id/myButton"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/openCamera" />
+  <ImageView
+      android:src="@android:drawable/ic_menu_gallery"
+      android:layout_width="fill_parent"
+      android:layout_height="200.0dp"
+      android:id="@+id/imageView"
+      android:adjustViewBounds="true" />
+  <Button
+      android:id="@+id/save"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:background="#307FC1"
+      android:text="Save"
+      android:textColor="@android:color/white" />
+  <Button
+      android:id="@+id/delete"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:background="#307FC1"
+      android:text="Delete"
+      android:textColor="@android:color/white" />
+  <Button
+      android:id="@+id/get_address"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:background="#307FC1"
+      android:text="Get Address"
+      android:textColor="@android:color/white" />
+  <TextView
+      android:layout_width="fill_parent"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_height="wrap_content"
+      android:text="Address (when available)"
+      android:id="@+id/address_text"
+      android:layout_marginTop="10dp" />
+  <TextView
+      android:layout_width="fill_parent"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_height="wrap_content"
+      android:text="Location (when available)"
+      android:id="@+id/location_text"
+      android:layout_marginBottom="15dp" />
+  <TextView
+     android:layout_width="fill_parent"
+     android:textAppearance="?android:attr/textAppearanceMedium"
+     android:layout_height="wrap_content"
+     android:text="Description (when available)"
+     android:id="@+id/image_description"
+     android:layout_marginBottom="15dp" />
 </LinearLayout>

@@ -26,10 +26,11 @@ using Android.Support.V7.App;
 using Android.Net.Http;
 using Android.Util;
 using System.IO;
+using Android.Support.Design.Widget;
 
 namespace CatGoAndroid
 {
-    [Activity(Label = "LabelDetectionActivity", MainLauncher = true)]
+    [Activity(Label = "LabelDetectionActivity")]
     public class LabelDetectionActivity : AppCompatActivity
     {
         private static readonly string CLOUD_VISION_API_KEY = "";
@@ -49,6 +50,7 @@ namespace CatGoAndroid
 
             SetContentView(Resource.Layout.activity_main);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            
             SetSupportActionBar(toolbar);
 
             var fab = FindViewById<Button>(Resource.Id.fab);

@@ -13,7 +13,6 @@ using Android.Util;
 using Android.Content.PM;
 using Android.Support.V4.App;
 using Android.Support.V4.Content;
-using Java.Interop;
 
 namespace CatGoAndroid
 {
