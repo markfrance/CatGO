@@ -27,6 +27,7 @@ using Google.Apis.Auth.OAuth2;
 using Google.Apis.Vision.v1;
 using Google.Apis.Vision.v1.Data;
 using Google.Apis.Services;
+using Android.Support.V7.App;
 
 namespace CatGoAndroid
 {
@@ -314,48 +315,61 @@ namespace CatGoAndroid
         {
             _imageDescription.SetText(Resource.String.loading_message);
 
-            GoogleCredential credential =
-                GoogleCredential.GetApplicationDefaultAsync().Result;
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", @"C:\CatGo-46215182ea6e.json");
 
-            if (credential.IsCreateScopedRequired)
+            try
             {
-                credential = credential.CreateScoped(new[]
+                GoogleCredential credential = GoogleCredential.GetApplicationDefaultAsync().Result;
+
+                if (credential.IsCreateScopedRequired)
                 {
+                    credential = credential.CreateScoped(new[]
+                    {
                     VisionService.Scope.CloudPlatform
                 });
-            }
-            var vision = new VisionService(new BaseClientService.Initializer
-            {
-                HttpClientInitializer = credential,
-                GZipEnabled = false
-            });
+                }
 
-            var byteArrayOutputStream = new System.IO.MemoryStream();
-            bitmap.Compress(Bitmap.CompressFormat.Png, 100, byteArrayOutputStream);
-            var byteArray = byteArrayOutputStream.ToArray();
-
-            var imageData = Convert.ToBase64String(byteArray);
-
-            var responses = vision.Images.Annotate(
-                new BatchAnnotateImagesRequest()
+                var vision = new VisionService(new BaseClientService.Initializer
                 {
-                    Requests = new[] {
+                    HttpClientInitializer = credential,
+                    GZipEnabled = false
+                });
+
+                var byteArrayOutputStream = new System.IO.MemoryStream();
+                bitmap.Compress(Bitmap.CompressFormat.Png, 100, byteArrayOutputStream);
+                var byteArray = byteArrayOutputStream.ToArray();
+
+                var imageData = Convert.ToBase64String(byteArray);
+
+                var responses = vision.Images.Annotate(
+                    new BatchAnnotateImagesRequest()
+                    {
+                        Requests = new[] {
                     new AnnotateImageRequest() {
                         Features = new [] { new Feature() { Type =
                           "LABEL_DETECTION"}},
                         Image = new Image() { Content = imageData }
                     }
-               }
-                }).Execute();
+                   }
+                    }).Execute();
 
-            var result = responses.Responses;
+                var result = responses.Responses;
 
-            foreach (var test in result)
-            {
-                foreach (var label in test.LabelAnnotations)
+                foreach (var test in result)
                 {
-                    _description += $"{label.Description} ({label.Score}) .";
+                    foreach (var label in test.LabelAnnotations)
+                    {
+                        _description += $"{label.Description} ({label.Score}) .";
+                    }
                 }
+            }
+            catch (System.Exception e)
+            {
+                var test = e.InnerException;
+                //needs restart
+
+                var test2 = System.Environment.GetEnvironmentVariables(EnvironmentVariableTarget.Process);
+
             }
 
             _imageDescription.Text = _description;

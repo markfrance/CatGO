@@ -33,7 +33,7 @@ namespace CatGoAndroid
     [Activity(Label = "LabelDetectionActivity")]
     public class LabelDetectionActivity : AppCompatActivity
     {
-        private static readonly string CLOUD_VISION_API_KEY = "";
+        private static readonly string CLOUD_VISION_API_KEY = "AIzaSyDKLEGSpkP_5oguJFdTtfsFTOYIzGq62lA";
         public static string FILE_NAME = "test.jpg";
 
         private static readonly string TAG = typeof(LabelDetectionActivity).Name;
@@ -50,7 +50,7 @@ namespace CatGoAndroid
 
             SetContentView(Resource.Layout.activity_main);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            
+
             SetSupportActionBar(toolbar);
 
             var fab = FindViewById<Button>(Resource.Id.fab);
